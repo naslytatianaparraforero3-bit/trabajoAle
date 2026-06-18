@@ -1,0 +1,48 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list-container {
+  padding: 1rem 0;
+}
+
+.list-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.list-title {
+  font-size: 2.2rem;
+  color: #5d3f82; 
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+}
+
+.list-subtitle {
+  font-size: 1rem;
+  color: #bfaecf; 
+  font-weight: 500;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.8rem;
+  
+  app-user-card {
+    animation: fadeInUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+    
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.06}s;
+      }
+    }
+  }
+}

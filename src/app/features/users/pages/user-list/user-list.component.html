@@ -1,1 +1,12 @@
-<p>user-list works!</p>
+<div class="list-container">
+  <div class="list-header">
+    <h2 class="list-title">No sabia que poner jaja</h2>
+    <p class="list-subtitle">Información de los usuarios supongo</p>
+  </div>
+
+  <div class="grid-layout">
+    @for (item of usuarios; track item.id) {
+      <app-user-card [user]="item"></app-user-card>
+    }
+  </div>
+</div>
